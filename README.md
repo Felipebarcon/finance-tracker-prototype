@@ -1,4 +1,5 @@
-This is the finance tracker app !
+This is the finance tracker app ! The app is still under construction but you can already visit and play with it
+at: https://finance-tracker-365.herokuapp.com
 
 With this app user can signup, edit their profile and login/logout.
 
