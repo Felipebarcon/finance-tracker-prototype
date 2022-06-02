@@ -1,73 +1,208 @@
-// Specific CSS for your home-page
-.animation {
-  background: #f1f1f1;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap');
 
-  a {
-    text-decoration: none;
-    color: white;
+a {
+  text-decoration: none;
+}
+
+.home-page {
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .title {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 50px;
+
+      .block {
+        width: 0%;
+        height: inherit;
+        background: #ffb510;
+        position: absolute;
+        animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+        display: flex;
+      }
+
+      h1 {
+        font-family: 'Poppins';
+        color: #232323;
+        font-size: 32px;
+        -webkit-animation: mainFadeIn 2s forwards;
+        -o-animation: mainFadeIn 2s forwards;
+        animation: mainFadeIn 2s forwards;
+        animation-delay: 1.6s;
+        opacity: 0;
+        display: flex;
+        align-items: baseline;
+        position: relative;
+
+        span {
+          width: 0px;
+          height: 0px;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+
+          background: #ffb510;
+          -webkit-animation: load 0.6s cubic-bezier(.74, .06, .4, .92) forwards;
+          animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+          animation-delay: 2s;
+          margin-left: 5px;
+          margin-top: -10px;
+          position: absolute;
+          bottom: 13px;
+          right: -12px;
+
+        }
+      }
+    }
+
+    .role {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 30px;
+      margin-top: -10px;
+
+      .block {
+        width: 0%;
+        height: inherit;
+        background: #e91e63;
+        position: absolute;
+        animation: secBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+        animation-delay: 2s;
+        display: flex;
+      }
+
+      p {
+        animation: secFadeIn 2s forwards;
+        animation-delay: 3.2s;
+        opacity: 0;
+        font-weight: 400;
+        font-family: 'Lato';
+        color: #232323;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+    }
   }
 }
 
-.perspective-text {
-  color: white;
-  font-family: Arial;
-  font-size: 58px;
-  font-weight: 900;
-  letter-spacing: -2px;
-  text-transform: uppercase;
+
+
+
+
+@keyframes mainBlock {
+  0% {
+    width: 0%;
+    left: 0;
+
+  }
+
+  50% {
+    width: 100%;
+    left: 0;
+
+  }
+
+  100% {
+    width: 0;
+    left: 100%;
+  }
 }
 
-.perspective-line {
-  height: 50px;
-  overflow: hidden;
-  position: relative;
+@keyframes secBlock {
+  0% {
+    width: 0%;
+    left: 0;
+
+  }
+
+  50% {
+    width: 100%;
+    left: 0;
+
+  }
+
+  100% {
+    width: 0;
+    left: 100%;
+  }
 }
 
-.home-perspective {
-  margin: 0;
-  height: 50px;
-  line-height: 50px;
-  transition: all 0.5s ease-in-out;
+@keyframes mainFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-.perspective-line:nth-child(odd) {
-  transform: skew(60deg, -30deg) scaleY(0.667);
+
+@keyframes popIn {
+  0% {
+    width: 0px;
+    height: 0px;
+    background: #e9d856;
+    border: 0px solid #ddd;
+    opacity: 0;
+  }
+
+  50% {
+    width: 10px;
+    height: 10px;
+    background: #e9d856;
+    opacity: 1;
+    bottom: 45px;
+  }
+
+  65% {
+    width: 7px;
+    height: 7px;
+    bottom: 0px;
+    width: 15px
+  }
+
+  80% {
+    width: 10px;
+    height: 10px;
+    bottom: 20px
+  }
+
+  100% {
+    width: 7px;
+    height: 7px;
+    background: #e9d856;
+    border: 0px solid #222;
+    bottom: 13px;
+
+  }
 }
 
-.perspective-line:nth-child(even) {
-  transform: skew(0deg, -30deg) scaleY(1.337);
-}
+@keyframes secFadeIn {
+  0% {
+    opacity: 0;
+  }
 
-.perspective-text:hover p {
-  transform: translate(0, -50px);
-}
-
-.perspective-line:nth-child(1) {
-  left: 29px;
-}
-
-.perspective-line:nth-child(2) {
-  left: 58px;
-  background: #0ac513;
-}
-
-.perspective-line:nth-child(3) {
-  left: 87px;
-  background: #4c8bf5;
-}
-
-.perspective-line:nth-child(4) {
-  left: 116px;
-  background: #ffd900;
-}
-
-.perspective-line:nth-child(5) {
-  left: 145px;
+  100% {
+    opacity: 0.5;
+  }
 }
