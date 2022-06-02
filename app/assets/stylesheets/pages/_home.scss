@@ -14,8 +14,8 @@ a {
   align-items: center;
 
   .box {
-    width: 250px;
-    height: 250px;
+    width: 500px;
+    height: 500px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -40,7 +40,7 @@ a {
       h1 {
         font-family: 'Poppins';
         color: #232323;
-        font-size: 32px;
+        font-size: 64px;
         -webkit-animation: mainFadeIn 2s forwards;
         -o-animation: mainFadeIn 2s forwards;
         animation: mainFadeIn 2s forwards;
@@ -77,7 +77,7 @@ a {
       display: flex;
       align-items: center;
       height: 30px;
-      margin-top: -10px;
+      margin-top: 10px;
 
       .block {
         width: 0%;
@@ -96,7 +96,7 @@ a {
         font-weight: 400;
         font-family: 'Lato';
         color: #232323;
-        font-size: 12px;
+        font-size: 24px;
         text-transform: uppercase;
         letter-spacing: 5px;
       }
