@@ -15,7 +15,7 @@
         <td class="company-logo"><%= image_tag("https://storage.googleapis.com/iex/api/logos/#{stock.ticker}.png") %></td>
         <th scope="row"><%= stock.ticker %></th>
         <td><%= stock.name %></td>
-        <td><%= stock.last_price %></td>
+        <td><%= stock.price(stock.ticker) %></td>
         <td><% if current_user.can_track_stock?(stock.ticker) %>
               <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: stock.ticker),
                                               class: "btn btn-outline-success btn-sm", method: :post %>
