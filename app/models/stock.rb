@@ -32,9 +32,4 @@ class Stock < ApplicationRecord
     client = api_call
     @change = client.quote(ticker_symbol).change_percent_s
   end
-
-    def chart(ticker_symbol)
-    client = api_call
-    @chart = client.chart(ticker_symbol, 'dynamic')
-  end
 end
