@@ -17,4 +17,8 @@ class Stock < ApplicationRecord
   def self.check_db(ticker_symbol)
     where(ticker: ticker_symbol).first
   end
+
+  def self.logo(ticker_symbol)
+    @logo = "https://storage.googleapis.com/iex/api/logos/#{ticker_symbol}.png"
+  end
 end
