@@ -2,6 +2,7 @@
   <table class="table table-bordered table-hover">
     <thead>
       <tr>
+        <th scope="col">Logo</th>
         <th scope="col">Ticker</th>
         <th scope="col">Name</th>
         <th scope="col">Price</th>
@@ -11,6 +12,7 @@
     <tbody>
     <% @tracked_stocks.each do |stock| %>
       <tr>
+        <td><%= image_tag("https://storage.googleapis.com/iex/api/logos/#{stock.ticker}.png") %></td>
         <th scope="row"><%= stock.ticker %></th>
         <td><%= stock.name %></td>
         <td><%= stock.last_price %></td>
