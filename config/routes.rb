@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get 'search_friend', to: 'users#search'
   resources :friendships, only: [:create, :destroy]
   resources :users, only: [:show]
+  resources :stocks, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
